@@ -2475,6 +2475,25 @@
       }
     },
     {
+      "@id": "nde:@type",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Type associated with the work (like ComputationalTool or Dataset).",
+      "rdfs:label": "@type",
+      "schema:domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        },
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
       "@id": "nde:citedBy",
       "@type": "rdf:Property",
       "rdfs:comment": "Publications that cite the computational tool.",
