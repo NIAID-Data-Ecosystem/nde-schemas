@@ -4207,8 +4207,8 @@
       "rdfs:subClassOf": {
         "@id": "schema:Collection"
       },
-      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.2 - 2026.06.30"],
-      "dct:provenance":"Changes since previous version: Add 'Aggregate data' option for 'hasDownload' property.",
+      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.3 - 2026.07.09"],
+      "dct:provenance":"Add 'varied' and 'unknown' as a conditionsOfAccess option. Update 'genre' to accept additional terms.",
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -4890,15 +4890,35 @@
           "genre": {
             "description": "Whether the resource is IID domain specific or generalist.",
             "abstract": "Whether the work is IID domain specific or generalist",
-            "type": "string",
-            "enum": ["IID", "Generalist", "Basic science", "Biomedical", "Other", "Metadata"],
-            "owl:cardinality": "one"
+            "owl:cardinality": "many",
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": ["IID", "Generalist", "Basic science", "Biomedical", "Other", "Metadata"]
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["IID", "Generalist", "Basic science", "Biomedical", "Other", "Metadata"]
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
           },
           "conditionsOfAccess": {
-            "description": "Conditions that affect the availability of, or method(s) of access to, the work. Options include open (freely available), restricted (may include restrictions such as on use), closed (requires registration to access), or embargoed (unpublished).",
+            "description": "Conditions that affect the availability of, or method(s) of access to, the work. Options include open (freely available), restricted (may include restrictions such as on use), closed (requires registration to access), embargoed (unpublished), varied (access varies by record), unknown (conditions of access information was not found).",
             "abstract": "accessibility of the work",
             "type": "string",
-            "enum": ["Closed", "Open", "Restricted", "Embargoed"],
+            "enum": ["Closed", "Open", "Restricted", "Embargoed", "Varied", "Unknown"],
             "owl:cardinality": "one"
           },
           "creator": {
