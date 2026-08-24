@@ -4207,8 +4207,8 @@
       "rdfs:subClassOf": {
         "@id": "schema:Collection"
       },
-      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.3 - 2026.07.09"],
-      "dct:provenance":"Add 'varied' and 'unknown' as a conditionsOfAccess option. Update 'genre' to accept additional terms.",
+      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.4 - 2026.08.24"],
+      "dct:provenance":"Change cardinality of collectionType to many to accommodate Source/ResourceCatalog metadata reconciliation",
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -5504,13 +5504,26 @@
             "anyOf": [
               {
                 "type": "string",
-                "enum": ["Knowledge Base", "Ontology", "Terminology", "Database", "Dataset", "Metadata Catalog", "Archive", "Cloud Ecosystem", "Corpus", "Repository", "Controlled Vocabulary", "Registry", "Data Dictionary", "Data Mart", "Data Warehouse", "Data Store", "Data Collection", "Portal"]
+                "enum": ["Dataset Repository", "Computational Tool Repository", "Data Repository", "Resource Catalog", "Sample Repository", "Program Repository", "Knowledge Base", "Ontology", "Terminology", "Database", "Dataset", "Metadata Catalog", "Archive", "Cloud Ecosystem", "Corpus", "Repository", "Controlled Vocabulary", "Registry", "Data Dictionary", "Data Mart", "Data Warehouse", "Data Store", "Data Collection", "Portal"]
               },
               {
                   "$ref": "#/definitions/collectiontypes"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/collectiontypes"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["Dataset Repository", "Computational Tool Repository", "Data Repository", "Resource Catalog", "Sample Repository", "Program Repository", "Knowledge Base", "Ontology", "Terminology", "Database", "Dataset", "Metadata Catalog", "Archive", "Cloud Ecosystem", "Corpus", "Repository", "Controlled Vocabulary", "Registry", "Data Dictionary", "Data Mart", "Data Warehouse", "Data Store", "Data Collection", "Portal"]
+                }
               }
             ],
-            "owl:cardinality": "one"
+            "owl:cardinality": "many"
           },
           "sourceOrganization": {
             "description": "The organization, research project, working group, or funded program on whose behalf the author/creator was working.",
