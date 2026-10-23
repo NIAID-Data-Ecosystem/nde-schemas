@@ -948,7 +948,7 @@
                   "properties": {
                     "administrativeType": {
                       "description": "the type of administrative area, such as country, state, county, or city",
-                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                       "type": "string"
                     },
                     "alternateName": {
@@ -1000,7 +1000,7 @@
                 "properties": {
                   "administrativeType": {
                     "description": "the type of administrative area, such as country, state, county, or city",
-                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                     "type": "string"
                   },
                   "alternateName": {
@@ -5181,7 +5181,7 @@
                   "properties": {
                     "administrativeType": {
                       "description": "the type of administrative area, such as country, state, county, or city",
-                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                       "type": "string"
                     },
                     "alternateName": {
@@ -5233,7 +5233,7 @@
                 "properties": {
                   "administrativeType": {
                     "description": "the type of administrative area, such as country, state, county, or city",
-                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                     "type": "string"
                   },
                   "alternateName": {
@@ -7919,7 +7919,7 @@
                   "properties": {
                     "administrativeType": {
                       "description": "the type of administrative area, such as country, state, county, or city",
-                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                       "type": "string"
                     },
                     "alternateName": {
@@ -7960,7 +7960,7 @@
                 "properties": {
                   "administrativeType": {
                     "description": "the type of administrative area, such as country, state, county, or city",
-                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                     "type": "string"
                   },
                   "alternateName": {
@@ -8005,7 +8005,7 @@
                   "properties": {
                     "administrativeType": {
                       "description": "the type of administrative area, such as country, state, county, or city",
-                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                       "type": "string"
                     },
                     "alternateName": {
@@ -8044,7 +8044,7 @@
                 "properties": {
                   "administrativeType": {
                     "description": "the type of administrative area, such as country, state, county, or city",
-                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                     "type": "string"
                   },
                   "alternateName": {
@@ -8218,7 +8218,7 @@
                   "properties": {
                     "administrativeType": {
                       "description": "the type of administrative area, such as country, state, county, or city",
-                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                       "type": "string"
                     },
                     "alternateName": {
@@ -8270,7 +8270,7 @@
                 "properties": {
                   "administrativeType": {
                     "description": "the type of administrative area, such as country, state, county, or city",
-                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                     "type": "string"
                   },
                   "alternateName": {
@@ -11160,7 +11160,7 @@
                       "properties": {
                         "administrativeType": {
                           "description": "the type of administrative area, such as country, state, county, or city",
-                          "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                          "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                           "type": "string"
                         },
                         "alternateName": {
@@ -11201,7 +11201,7 @@
                     "properties": {
                       "administrativeType": {
                         "description": "the type of administrative area, such as country, state, county, or city",
-                        "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                        "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                         "type": "string"
                       },
                       "alternateName": {
@@ -11246,7 +11246,7 @@
                       "properties": {
                         "administrativeType": {
                           "description": "the type of administrative area, such as country, state, county, or city",
-                          "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                          "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                           "type": "string"
                         },
                         "alternateName": {
@@ -11285,7 +11285,7 @@
                     "properties": {
                       "administrativeType": {
                         "description": "the type of administrative area, such as country, state, county, or city",
-                        "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                        "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                         "type": "string"
                       },
                       "alternateName": {
@@ -11459,7 +11459,7 @@
                       "properties": {
                         "administrativeType": {
                           "description": "the type of administrative area, such as country, state, county, or city",
-                          "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                          "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                           "type": "string"
                         },
                         "alternateName": {
@@ -11511,7 +11511,7 @@
                     "properties": {
                       "administrativeType": {
                         "description": "the type of administrative area, such as country, state, county, or city",
-                        "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                        "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                         "type": "string"
                       },
                       "alternateName": {
@@ -12300,7 +12300,7 @@
                   "properties": {
                     "administrativeType": {
                       "description": "the type of administrative area, such as country, state, county, or city",
-                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                      "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                       "type": "string"
                     },
                     "alternateName": {
@@ -12352,7 +12352,7 @@
                 "properties": {
                   "administrativeType": {
                     "description": "the type of administrative area, such as country, state, county, or city",
-                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward"],
+                    "enum": ["province", "district", "chiefdom", "village", "city", "country", "prefecture", "sub-prefecture", "clan", "Federal Capital Territory", "state", "Local Government Area", "ward", "region", "continent", "military installation", "other"],
                     "type": "string"
                   },
                   "alternateName": {
