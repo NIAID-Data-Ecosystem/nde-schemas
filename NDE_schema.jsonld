@@ -19,8 +19,8 @@
       "rdfs:subClassOf": {
         "@id": "niaid:Dataset"
       },
-      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.1 - 2026.04.08"],
-      "dct:provenance":"Changes since previous version: Add 'creativeWorkStatus' property.",
+      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.2 - 2026.11.02"],
+      "dct:provenance":"Changes since previous version: Update 'additionalType' property to allow for DefinedTerm. Update CreativeWorkObjects to allow for 'additionalType'.",
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -1436,6 +1436,64 @@
                 "description": "Abstract of the referenced work",
                 "type": "string"
               },
+              "additionalType": {
+                "description": "Additional type of the referenced work, such as a Sample, Run, Experiment, etc.",
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "format": "uri",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["name"],
+                      "recommended": ["url"],
+                      "type": "object",
+                      "@type": "DefinedTerm"                
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["name"],
+                    "recommended": ["url"],
+                    "type": "object",
+                    "@type": "DefinedTerm"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }    
+                ]
+              },
               "datePublished": {
                 "description": "Date the referenced work was published",
                 "format": "date",
@@ -1489,7 +1547,7 @@
               }
             },
             "required": ["name"],
-            "recommended": ["author", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
+            "recommended": ["author", "additionalType", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
             "optional": ["abstract", "citation", "description", "hasPart"]
           },
           "topic": {
@@ -2342,8 +2400,8 @@
       "rdfs:subClassOf": {
         "@id": "niaid:ComputationalTool"
       },
-      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.0 - 2026.04.08"],
-      "dct:provenance":"Changes since previous version: Add 'creativeWorkStatus' property.",
+      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.1 - 2026.11.02"],
+      "dct:provenance":"Changes since previous version: Update 'additionalType' property to allow for DefinedTerm. Update CreativeWorkObjects to allow for 'additionalType'.",
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -3781,8 +3839,17 @@
                 "type": "string"
               },
               "additionalType": {
-                "description": "Additional type of the referenced work, such as a Sample, Run, Experiment, or BioProject",
-                "oneOf": [
+                "description": "Additional type of the referenced work, such as a Sample, Run, Experiment, etc.",
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
                   {
                     "items": {
                       "properties": {
@@ -3796,10 +3863,37 @@
                       },
                       "required": ["name"],
                       "recommended": ["url"],
-                      "type": "object"
+                      "type": "object",
+                      "@type": "DefinedTerm"                
                     },
                     "type": "array"
-                  }
+                  },
+                  {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["name"],
+                    "recommended": ["url"],
+                    "type": "object",
+                    "@type": "DefinedTerm"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }    
                 ]
               },
               "datePublished": {
@@ -4207,8 +4301,8 @@
       "rdfs:subClassOf": {
         "@id": "schema:Collection"
       },
-      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.4 - 2026.08.24"],
-      "dct:provenance":"Change cardinality of collectionType to many to accommodate Source/ResourceCatalog metadata reconciliation",
+      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v2.5 - 2026.11.02"],
+      "dct:provenance":"Changes since previous version: Update 'additionalType' property to allow for DefinedTerm. Update CreativeWorkObjects to allow for 'additionalType'.",
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -5712,6 +5806,64 @@
                 "format": "date",
                 "type": "string"
               },
+              "additionalType": {
+                "description": "Additional type of the referenced work, such as a Sample, Run, Experiment, etc.",
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "format": "uri",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["name"],
+                      "recommended": ["url"],
+                      "type": "object",
+                      "@type": "DefinedTerm"                
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["name"],
+                    "recommended": ["url"],
+                    "type": "object",
+                    "@type": "DefinedTerm"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }    
+                ]
+              },
               "description": {
                 "description": "Description of the referenced work",
                 "type": "string"
@@ -5760,7 +5912,7 @@
               }
             },
             "required": ["name"],
-            "recommended": ["author", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
+            "recommended": ["author", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url", "additionalType"],
             "optional": ["abstract", "citation", "description", "hasPart"]
           },
           "topic": {
@@ -6159,7 +6311,7 @@
         "@id": "schema:DefinedTerm"
       },
       "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v1.2 - 2025.05.29"],
-      "dct:provenance":"Changes since previous version: Replace includedInDataCatalog.dataset with includedInDataCatalog.archivedAt.",
+      "dct:provenance":"Changes since previous version: Changes since previous version: Replace includedInDataCatalog.dataset with includedInDataCatalog.archivedAt.",
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -6495,8 +6647,8 @@
           "@id": "schema:CreativeWork"
         }
       ],
-      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v0.7 - 2026.04.08"],
-      "dct:provenance":"Changes since previous version: Add 'creativeWorkStatus' property.",
+      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v0.8 - 2026.11.02"],
+      "dct:provenance":"Changes since previous version: Update 'additionalType' property to allow for DefinedTerm. Update CreativeWorkObjects to allow for 'additionalType'.",
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -8495,7 +8647,51 @@
               },
               {
                 "type": "string"
-              }
+              },
+              {
+                "items": {
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "format": "uri",
+                      "type": "string"
+                    }
+                  },
+                  "required": ["name"],
+                  "recommended": ["url"],
+                  "@type": "DefinedTerm",        
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "required": ["name"],
+                "recommended": ["url"],
+                "@type": "DefinedTerm",            
+                "type": "object"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              {
+                "type": "string",
+                "format": "uri"
+              }    
             ],
             "owl:cardinality": "many"
           }
@@ -8629,6 +8825,64 @@
                 "description": "Abstract of the referenced work",
                 "type": "string"
               },
+              "additionalType": {
+                "description": "Additional type of the referenced work, such as a Sample, Run, Experiment, etc.",
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "format": "uri",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["name"],
+                      "recommended": ["url"],
+                      "type": "object",
+                      "@type": "DefinedTerm"                
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["name"],
+                    "recommended": ["url"],
+                    "type": "object",
+                    "@type": "DefinedTerm"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }    
+                ]
+              },
               "datePublished": {
                 "description": "Date the referenced work was published",
                 "format": "date",
@@ -8682,7 +8936,7 @@
               }
             },
             "required": ["name"],
-            "recommended": ["author", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
+            "recommended": ["author", "additionalType", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
             "optional": ["abstract", "citation", "description", "hasPart"]
           },
           "topic": {
@@ -9088,8 +9342,8 @@
       "rdfs:subClassOf": {
           "@id": "schema:ItemList"
       },
-      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v0.3 - 2025.12.17"],
-      "dct:provenance":"Changes since previous version: Change the parent class of the SampleCollection schema to ItemList and reorganized the properties and expected values.",
+      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v0.4 - 2026.11.02"],
+      "dct:provenance":"Changes since previous version: Update 'additionalType' property to allow for DefinedTerm. Update CreativeWorkObjects to allow for 'additionalType'.",
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -9354,6 +9608,64 @@
                 "description": "Abstract of the referenced work",
                 "type": "string"
               },
+              "additionalType": {
+                "description": "Additional type of the referenced work, such as a Sample, Run, Experiment, etc.",
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "format": "uri",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["name"],
+                      "recommended": ["url"],
+                      "type": "object",
+                      "@type": "DefinedTerm"                
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["name"],
+                    "recommended": ["url"],
+                    "type": "object",
+                    "@type": "DefinedTerm"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }    
+                ]
+              },
               "datePublished": {
                 "description": "Date the referenced work was published",
                 "format": "date",
@@ -9407,7 +9719,7 @@
               }
             },
             "required": ["name"],
-            "recommended": ["author", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
+            "recommended": ["author", "additionalType", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
             "optional": ["abstract", "citation", "description", "hasPart"]
           },
           "topic": {
@@ -11721,8 +12033,8 @@
       "rdfs:subClassOf": {
         "@id": "nde:Dataset"
       },
-      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v0.2 - 2026.02.04"],
-      "dct:provenance":"Changes since previous version: Updated exampleOfWork object to include 'additionalProperty'.",
+      "schema:schemaVersion":["https://schema.org/docs/releases.html#v18.0","v0.3 - 2026.11.02"],
+      "dct:provenance":"Changes since previous version: Update 'additionalType' property to allow for DefinedTerm. Update CreativeWorkObjects to allow for 'additionalType'.",
       "$validation": {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
@@ -13060,6 +13372,64 @@
                 "description": "Abstract of the referenced work",
                 "type": "string"
               },
+              "additionalType": {
+                "description": "Additional type of the referenced work, such as a Sample, Run, Experiment, etc.",
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "format": "uri",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["name"],
+                      "recommended": ["url"],
+                      "type": "object",
+                      "@type": "DefinedTerm"                
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["name"],
+                    "recommended": ["url"],
+                    "type": "object",
+                    "@type": "DefinedTerm"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }    
+                ]
+              },
               "datePublished": {
                 "description": "Date the referenced work was published",
                 "format": "date",
@@ -13113,7 +13483,7 @@
               }
             },
             "required": ["name"],
-            "recommended": ["author", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
+            "recommended": ["author", "additionalType", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
             "optional": ["abstract", "citation", "description", "hasPart"]
           },
           "examplework": {
@@ -16018,6 +16388,64 @@
                 "description": "Abstract of the referenced work",
                 "type": "string"
               },
+              "additionalType": {
+                "description": "Additional type of the referenced work, such as a Sample, Run, Experiment, etc.",
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "format": "uri",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["name"],
+                      "recommended": ["url"],
+                      "type": "object",
+                      "@type": "DefinedTerm"                
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "format": "uri",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["name"],
+                    "recommended": ["url"],
+                    "type": "object",
+                    "@type": "DefinedTerm"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  }    
+                ]
+              },
               "datePublished": {
                 "description": "Date the referenced work was published",
                 "format": "date",
@@ -16063,7 +16491,7 @@
               }
             },
             "required": ["name"],
-            "recommended": ["author", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
+            "recommended": ["additionalType", "datePublished", "doi", "identifier", "includedInDataCatalog", "relationship", "url"],
             "optional": ["abstract", "citation", "description", "hasPart"]
           },
           "thing": {
@@ -17278,6 +17706,31 @@
       "schema:rangeIncludes": {
         "@id": "schema:PropertyValue"
       }
+    },
+    {
+      "@id": "nde:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.",
+      "rdfs:label": "additionalType",
+      "schema:domainIncludes": [
+        {
+          "@id": "nde:Sample"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "nde:DefinedTerm"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     }
   ]
 }
